@@ -1,23 +1,104 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="KCViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JN3-h0-eHL">
+                                <connections>
+                                    <action selector="slideHue:" destination="2" eventType="valueChanged" id="ezg-h8-Tvh"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-yZ-nAM">
+                                <connections>
+                                    <action selector="slideBlue:" destination="2" eventType="valueChanged" id="paf-BD-X6A"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AnC-iM-M1T">
+                                <connections>
+                                    <action selector="slideGreen:" destination="2" eventType="valueChanged" id="SgB-Si-dcX"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="e31-gg-PzQ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="wi9-e5-BV1"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="slideRed:" destination="2" eventType="valueChanged" id="U3X-Bn-512"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="T0M-Jb-7y7" customClass="KCColorSlider"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="J9O-ns-gn0" customClass="KCColorSlider"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7j7-me-Pk0">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J9O-ns-gn0" firstAttribute="top" secondItem="T0M-Jb-7y7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="347-jI-wBK"/>
+                            <constraint firstItem="7j7-me-Pk0" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="154" id="3eI-ad-Xjt"/>
+                            <constraint firstItem="7j7-me-Pk0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="242" id="5we-lr-Gfm"/>
+                            <constraint firstAttribute="bottom" secondItem="JN3-h0-eHL" secondAttribute="bottom" constant="30" id="8ta-SQ-xcn"/>
+                            <constraint firstItem="J9O-ns-gn0" firstAttribute="trailing" secondItem="T0M-Jb-7y7" secondAttribute="trailing" type="default" id="E1r-xP-JfD"/>
+                            <constraint firstItem="J9O-ns-gn0" firstAttribute="trailing" secondItem="JN3-h0-eHL" secondAttribute="trailing" type="default" id="FVX-C2-PS2"/>
+                            <constraint firstItem="AnC-iM-M1T" firstAttribute="top" secondItem="e31-gg-PzQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="G8T-b7-gl2"/>
+                            <constraint firstAttribute="bottom" secondItem="J9O-ns-gn0" secondAttribute="bottom" constant="123" id="IgX-uN-1Qh"/>
+                            <constraint firstItem="T0M-Jb-7y7" firstAttribute="leading" secondItem="XNl-yZ-nAM" secondAttribute="leading" type="default" id="Lsp-lL-oIz"/>
+                            <constraint firstItem="J9O-ns-gn0" firstAttribute="leading" secondItem="JN3-h0-eHL" secondAttribute="leading" type="default" id="WwY-DD-3LX"/>
+                            <constraint firstItem="e31-gg-PzQ" firstAttribute="trailing" secondItem="AnC-iM-M1T" secondAttribute="trailing" type="default" id="aeC-w8-MhM"/>
+                            <constraint firstItem="e31-gg-PzQ" firstAttribute="leading" secondItem="AnC-iM-M1T" secondAttribute="leading" type="default" id="fU1-XK-Mqy"/>
+                            <constraint firstItem="AnC-iM-M1T" firstAttribute="trailing" secondItem="XNl-yZ-nAM" secondAttribute="trailing" type="default" id="jAV-eI-bdQ"/>
+                            <constraint firstItem="J9O-ns-gn0" firstAttribute="leading" secondItem="T0M-Jb-7y7" secondAttribute="leading" type="default" id="lgT-2u-vcr"/>
+                            <constraint firstItem="e31-gg-PzQ" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="r3t-BJ-CtY"/>
+                            <constraint firstItem="XNl-yZ-nAM" firstAttribute="top" secondItem="AnC-iM-M1T" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="r8n-8z-zYe"/>
+                            <constraint firstItem="e31-gg-PzQ" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="sZ1-14-d1k"/>
+                            <constraint firstItem="AnC-iM-M1T" firstAttribute="leading" secondItem="XNl-yZ-nAM" secondAttribute="leading" type="default" id="uyz-SB-K5q"/>
+                            <constraint firstItem="T0M-Jb-7y7" firstAttribute="trailing" secondItem="XNl-yZ-nAM" secondAttribute="trailing" type="default" id="wLi-yG-6qR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="subSlider" destination="T0M-Jb-7y7" id="JZp-1b-y44"/>
+                        <outlet property="subSlider2" destination="J9O-ns-gn0" id="57a-nX-Kmn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="KCColorSlider" superclassName="UISlider">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KCColorSlider.h"/>
+        </class>
+        <class className="KCViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KCViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="slideBlue:" candidateClass="UISlider"/>
+                <relationship kind="action" name="slideGreen:" candidateClass="UISlider"/>
+                <relationship kind="action" name="slideHue:" candidateClass="UISlider"/>
+                <relationship kind="action" name="slideRed:" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="subSlider" candidateClass="KCColorSlider"/>
+                <relationship kind="outlet" name="subSlider2" candidateClass="KCColorSlider"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -18,6 +18,7 @@
 		0A7A8CB31700BC84008AD4C4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A7A8CB21700BC84008AD4C4 /* Default-568h@2x.png */; };
 		0A7A8CB61700BC84008AD4C4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A7A8CB41700BC84008AD4C4 /* MainStoryboard.storyboard */; };
 		0A7A8CB91700BC84008AD4C4 /* KCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7A8CB81700BC84008AD4C4 /* KCViewController.m */; };
+		0A7A8CCD1700CDCF008AD4C4 /* KCColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7A8CCC1700CDCF008AD4C4 /* KCColorSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		0A7A8CB51700BC84008AD4C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		0A7A8CB71700BC84008AD4C4 /* KCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KCViewController.h; sourceTree = "<group>"; };
 		0A7A8CB81700BC84008AD4C4 /* KCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KCViewController.m; sourceTree = "<group>"; };
+		0A7A8CCB1700CDCF008AD4C4 /* KCColorSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCColorSlider.h; sourceTree = "<group>"; };
+		0A7A8CCC1700CDCF008AD4C4 /* KCColorSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCColorSlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				0A7A8CAB1700BC84008AD4C4 /* KCAppDelegate.h */,
 				0A7A8CAC1700BC84008AD4C4 /* KCAppDelegate.m */,
 				0A7A8CB41700BC84008AD4C4 /* MainStoryboard.storyboard */,
+				0A7A8CCB1700CDCF008AD4C4 /* KCColorSlider.h */,
+				0A7A8CCC1700CDCF008AD4C4 /* KCColorSlider.m */,
 				0A7A8CB71700BC84008AD4C4 /* KCViewController.h */,
 				0A7A8CB81700BC84008AD4C4 /* KCViewController.m */,
 				0A7A8CA31700BC84008AD4C4 /* Supporting Files */,
@@ -117,6 +122,7 @@
 				0A7A8C941700BC84008AD4C4 /* Sources */,
 				0A7A8C951700BC84008AD4C4 /* Frameworks */,
 				0A7A8C961700BC84008AD4C4 /* Resources */,
+				50524F424C454D533F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -169,6 +175,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		50524F424C454D533F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+
 /* Begin PBXSourcesBuildPhase section */
 		0A7A8C941700BC84008AD4C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -177,6 +200,7 @@
 				0A7A8CA91700BC84008AD4C4 /* main.m in Sources */,
 				0A7A8CAD1700BC84008AD4C4 /* KCAppDelegate.m in Sources */,
 				0A7A8CB91700BC84008AD4C4 /* KCViewController.m in Sources */,
+				0A7A8CCD1700CDCF008AD4C4 /* KCColorSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +235,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -239,7 +263,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
